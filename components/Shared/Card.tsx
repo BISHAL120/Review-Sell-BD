@@ -13,11 +13,11 @@ import { toast } from "sonner";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "../ui/select";
 import { SelectValue } from "@radix-ui/react-select";
 
-const handleSubmit = (e: Event) => {
+const handleSubmit = (e) => {
   e.preventDefault();
-  const name = e?.target?.name?.value;
-  const number = e?.target?.number?.value;
-  const price = e?.target?.price?.value;
+  const name = e.target.name.value;
+  const number = e.target.number.value;
+  const price = e.target.price.value;
   const data = {
     Type: "Fiverr",
     name: name,
