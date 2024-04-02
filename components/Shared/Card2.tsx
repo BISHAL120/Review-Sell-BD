@@ -10,7 +10,7 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
-
+/* 
 const handleSubmit = (e) => {
   e.preventDefault();
   const name = e.target.name.value;
@@ -46,6 +46,13 @@ const handleSubmit = (e) => {
     });
   }
   console.log(data);
+}; */
+
+const handleSubmit = () => {
+  return toast.success("Congratulation", {
+    description: `Your Order Place Successfully`,
+    duration: 5000,
+  });
 };
 
 const CardItem2 = () => {

@@ -13,7 +13,7 @@ import { toast } from "sonner";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "../ui/select";
 import { SelectValue } from "@radix-ui/react-select";
 
-const handleSubmit = (e) => {
+/* const handleSubmit = (e) => {
   e.preventDefault();
   const name = e.target.name.value;
   const number = e.target.number.value;
@@ -43,6 +43,12 @@ const handleSubmit = (e) => {
     }
   }
   console.log(data);
+  return toast.success("Congratulation", {
+    description: `Your Order Place Successfully`,
+    duration: 5000,
+  });
+}; */
+const handleSubmit = () => {
   return toast.success("Congratulation", {
     description: `Your Order Place Successfully`,
     duration: 5000,
