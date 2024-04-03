@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 
-import React from "react";
+import React, { useState } from "react";
 import { formSchema } from "@/lib/Scheme";
 import { z } from "zod";
 
@@ -45,7 +45,10 @@ const CardItem1 = () => {
     },
   });
 
+  const [disabled, setDisabled] = useState(false);
+
   function onSubmit(values: info, event: any) {
+    setDisabled(true);
     const form = new FormData(event.target);
     const name = form.get("name");
     const image = form.get("image");
@@ -85,14 +88,14 @@ const CardItem1 = () => {
         })
           .then((res) => res.json())
           .then((data) => {
+            setDisabled(false);
             if (data.error) {
-              console.log(data);
               return toast.error(`Really Sorry ${values.name} Try again`, {
                 description: `Fail to Place Your Order`,
                 duration: 5000,
               });
             } else {
-              console.log(data);
+              setDisabled(false);
               return toast.success(`Congratulation ${values.name}`, {
                 description: `Your Order Place Successfully`,
                 duration: 5000,
@@ -192,7 +195,7 @@ const CardItem1 = () => {
                 )}
               />
 
-              <Button className="mt-8" type="submit">
+              <Button disabled={disabled} className="mt-8" type="submit">
                 Place Order
               </Button>
             </form>
