@@ -73,6 +73,7 @@ const CardItem1 = () => {
           dollar: values.price.split(",")[0],
           paymentSS: data.data.url,
           marketplace: "Fiver",
+          date: new Date(),
         };
 
         fetch(`${process.env.NEXT_PUBLIC_SERVER}/order`, {
