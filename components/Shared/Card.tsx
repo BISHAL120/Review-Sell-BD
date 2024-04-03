@@ -112,9 +112,9 @@ const CardItem1 = () => {
     >
       <Card className="max-w-[400px]">
         <CardHeader>
-          <CardTitle className="text-center mb-5">K Work Review</CardTitle>
+          <CardTitle className="text-center mb-5">Fiverr Review</CardTitle>
           <CardDescription className="text-center">
-            Get Review on K Work. We Give Review From US Authenticated Buyer
+            Get Review on Fiverr. We Give Review From US Authenticated Buyer
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -138,7 +138,7 @@ const CardItem1 = () => {
                 name="number"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel>Number</FormLabel>
                     <FormControl>
                       <Input placeholder="WhatsApp Number" {...field} />
                     </FormControl>
@@ -151,14 +151,14 @@ const CardItem1 = () => {
                 name="price"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>Amount</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select a verified email to display" />
+                          <SelectValue placeholder="Select The Amount" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
@@ -181,7 +181,7 @@ const CardItem1 = () => {
                 name="image"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel>ScreenShort</FormLabel>
                     <FormControl>
                       <Input type="file" {...field} />
                     </FormControl>
@@ -191,7 +191,7 @@ const CardItem1 = () => {
               />
 
               <Button className="mt-8" type="submit">
-                Submit
+                Place Order
               </Button>
             </form>
           </Form>
