@@ -3,9 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ModeToggle } from "./Dark-Mode-Button";
 import { FaRegCircleUser } from "react-icons/fa6";
-import CardItem from "./Card";
 import CardItem2 from "./Card2";
 import CardItem3 from "./Card3";
+import CardItem4 from "./Card4";
+import CardItem1 from "./Card";
 
 type Props = {};
 
@@ -58,21 +59,13 @@ const Main = (props: Props) => {
           Vision IT
         </p>
       </motion.div>
-      <div>
-        <motion.div
-          initial={{ opacity: 0.0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="pt-28 text-3xl font-medium dark:text-slate-200 text-[#1e1c1c] grid gap-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
-        >
-          <CardItem />
+      <div className="mb-32">
+        <div className="pt-28 text-3xl font-medium dark:text-slate-200 text-[#1e1c1c] grid gap-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          {/* <CardItem /> */}
+          <CardItem1 />
           <CardItem2 />
           <CardItem3 />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

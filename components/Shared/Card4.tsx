@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
 
 import React from "react";
 import { formSchema } from "@/lib/Scheme";
@@ -33,7 +32,7 @@ import {
 } from "../ui/card";
 import { toast } from "sonner";
 
-const CardItem3 = () => {
+const CardItem4 = () => {
   type info = z.infer<typeof formSchema>;
   const form = useForm<info>({
     resolver: zodResolver(formSchema),
@@ -46,6 +45,9 @@ const CardItem3 = () => {
   });
 
   function onSubmit(values: info, event: any) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+
     const form = new FormData(event.target);
     const name = form.get("name");
     const image = form.get("image");
@@ -66,53 +68,26 @@ const CardItem3 = () => {
       .then((res) => res.json())
       .then((data) => {
         const userData = {
-          number: values.number.toString(),
-          price: values.price.toString(),
-          dollar: values.price.split(",")[0],
-          taka: values.price.split(",")[1],
-          marketplace: "Up Work",
+          ...values,
+          marketPlace: "Fiver",
           image: data.data.url,
         };
 
-        fetch(`http://localhost:5050/order`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userData),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.error) {
-              return toast.error(`Really Sorry ${values.name} Try again`, {
-                description: `Fail to Place Your Order`,
-                duration: 5000,
-              });
-            } else {
-              return toast.success(`Congratulation ${values.name}`, {
-                description: `Your Order Place Successfully`,
-                duration: 5000,
-              });
-            }
-          });
+        console.log(userData);
+        return toast.success(`Congratulation ${values.name}`, {
+          description: `Your Order Place Successfully`,
+          duration: 5000,
+        });
       });
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0.0, x: -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{
-        delay: 0.6,
-        duration: 0.8,
-        ease: "easeInOut",
-      }}
-    >
+    <div>
       <Card className="max-w-[400px]">
         <CardHeader>
-          <CardTitle className="text-center mb-5">Up Work Review</CardTitle>
+          <CardTitle className="text-center mb-5">Fiverr Review</CardTitle>
           <CardDescription className="text-center">
-            Get Review on Up Work. We Give Review From US Authenticated Buyer
+            Get Review on Fiverr. We Give Review From US Authenticated Buyer
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -197,8 +172,8 @@ const CardItem3 = () => {
           </Form>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 
-export default CardItem3;
+export default CardItem4;
