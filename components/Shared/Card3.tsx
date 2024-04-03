@@ -75,7 +75,7 @@ const CardItem3 = () => {
           marketplace: "k Work",
         };
 
-        fetch(`${process.env.server}/order`, {
+        fetch(`${process.env.NEXT_PUBLIC_SERVER}/order`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -75,7 +75,7 @@ const CardItem1 = () => {
           marketplace: "Fiver",
         };
 
-        fetch(`${process.env.server}/order`, {
+        fetch(`${process.env.NEXT_PUBLIC_SERVER}/order`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -85,6 +85,7 @@ const CardItem1 = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.error) {
+              console.log(data);
               return toast.error(`Really Sorry ${values.name} Try again`, {
                 description: `Fail to Place Your Order`,
                 duration: 5000,
