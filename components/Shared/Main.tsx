@@ -16,8 +16,8 @@ const Main = (props: Props) => {
       {" "}
       <div className=" flex -tracking-tighter items-center justify-between">
         <motion.div
-          initial={{ opacity: 0.0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0.0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -30,8 +30,8 @@ const Main = (props: Props) => {
           </p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0.0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -60,7 +60,7 @@ const Main = (props: Props) => {
         </p>
       </motion.div>
       <div className="mb-32">
-        <div className="pt-28 text-3xl font-medium dark:text-slate-200 text-[#1e1c1c] grid gap-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="pt-28 max-w- text-3xl font-medium dark:text-slate-200 text-[#1e1c1c] grid gap-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {/* <CardItem /> */}
           <CardItem1 />
           <CardItem2 />

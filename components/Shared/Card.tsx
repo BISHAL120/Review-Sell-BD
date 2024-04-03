@@ -76,7 +76,7 @@ const CardItem1 = () => {
           dollar: values.price.split(",")[0],
           paymentSS: data.data.url,
           marketplace: "Fiver",
-          date: new Date(),
+          date: new Date(new Date().getTime() + 21600000),
         };
 
         fetch(`${process.env.NEXT_PUBLIC_SERVER}/order`, {
@@ -107,7 +107,7 @@ const CardItem1 = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0.0, x: -40 }}
+      initial={{ opacity: 0, x: -40 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{
         delay: 0.2,
