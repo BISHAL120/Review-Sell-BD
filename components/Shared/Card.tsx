@@ -66,15 +66,16 @@ const CardItem1 = () => {
       .then((res) => res.json())
       .then((data) => {
         const userData = {
+          name: values.name,
           number: values.number.toString(),
-          price: values.price.toString(),
-          dollar: values.price.split(",")[0],
+          amount: values.price.toString(),
           taka: values.price.split(",")[1],
+          dollar: values.price.split(",")[0],
+          paymentSS: data.data.url,
           marketplace: "Fiver",
-          image: data.data.url,
         };
 
-        fetch(`http://localhost:5050/order`, {
+        fetch(`${process.env.server}/order`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -89,6 +90,7 @@ const CardItem1 = () => {
                 duration: 5000,
               });
             } else {
+              console.log(data);
               return toast.success(`Congratulation ${values.name}`, {
                 description: `Your Order Place Successfully`,
                 duration: 5000,
