@@ -5,7 +5,6 @@ import { ModeToggle } from "./Dark-Mode-Button";
 import { FaRegCircleUser } from "react-icons/fa6";
 import CardItem2 from "./Card2";
 import CardItem3 from "./Card3";
-import CardItem4 from "./Card4";
 import CardItem1 from "./Card";
 
 type Props = {};
