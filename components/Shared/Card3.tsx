@@ -32,6 +32,7 @@ import {
   CardTitle,
 } from "../ui/card";
 import { toast } from "sonner";
+import { ReloadIcon } from "@radix-ui/react-icons";
 
 const CardItem3 = () => {
   type info = z.infer<typeof formSchema>;
@@ -44,10 +45,10 @@ const CardItem3 = () => {
       image: "",
     },
   });
-  const [disabled, setDisabled] = useState(false);
+  const [Loading, setLoading] = useState(false);
 
   function onSubmit(values: info, event: any) {
-    setDisabled(true);
+    setLoading(true);
     const form = new FormData(event.target);
     const name = form.get("name");
     const image = form.get("image");
@@ -87,14 +88,14 @@ const CardItem3 = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            setDisabled(false);
+            setLoading(false);
             if (data.error) {
               return toast.error(`Really Sorry ${values.name} Try again`, {
                 description: `Fail to Place Your Order`,
                 duration: 5000,
               });
             } else {
-              setDisabled(false);
+              setLoading(false);
               return toast.success(`Congratulation ${values.name}`, {
                 description: `Your Order Place Successfully`,
                 duration: 5000,
@@ -196,9 +197,16 @@ const CardItem3 = () => {
                 )}
               />
 
-              <Button className="mt-8" type="submit">
-                Place Order
-              </Button>
+              {Loading ? (
+                <Button className="mt-8" disabled>
+                  <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                  Please wait
+                </Button>
+              ) : (
+                <Button className="mt-8" type="submit">
+                  Place Order
+                </Button>
+              )}
             </form>
           </Form>
         </CardContent>
