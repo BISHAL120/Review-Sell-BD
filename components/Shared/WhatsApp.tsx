@@ -17,7 +17,7 @@ const WhatsApp = () => {
           ease: "easeInOut",
         }}
       >
-        <Link href={"https://wa.me/+8801994506240"}>
+        <Link href={"https://wa.me/+8801907044259"}>
           <FaWhatsapp size={50} />
         </Link>
       </motion.div>
