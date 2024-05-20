@@ -187,7 +187,7 @@ const CardItem1 = () => {
                 name="image"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>ScreenShort</FormLabel>
+                    <FormLabel>Gig ScreenShort</FormLabel>
                     <FormControl>
                       <Input type="file" {...field} />
                     </FormControl>
