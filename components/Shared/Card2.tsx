@@ -132,7 +132,7 @@ const CardItem2 = () => {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter Your Name" {...field} />
+                      <Input placeholder="Enter Your UpWork username" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
