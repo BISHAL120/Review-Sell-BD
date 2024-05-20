@@ -133,7 +133,7 @@ const CardItem1 = () => {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter Your Name" {...field} />
+                      <Input placeholder="Enter Your Fiver username" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
